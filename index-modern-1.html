@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070b16">
+<title>EH VPN Gladiator | Premium Plans</title>
+<style>
+:root{
+  --bg:#070b16;--surface:rgba(16,27,49,.78);--line:rgba(91,169,255,.2);
+  --blue:#2ea8ff;--cyan:#74e0ff;--text:#f3f8ff;--muted:#9fb1ca;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  background:
+   radial-gradient(ellipse at 15% -10%,rgba(0,133,255,.24),transparent 42%),
+   radial-gradient(ellipse at 100% 30%,rgba(0,221,255,.10),transparent 35%),
+   var(--bg);
+}
+a{color:inherit}
+.topbar{
+  width:min(1120px,calc(100% - 36px));margin:20px auto 0;padding:13px 17px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  border:1px solid var(--line);border-radius:18px;background:rgba(8,16,31,.72);
+  backdrop-filter:blur(16px);position:relative;z-index:2;
+}
+.brand{font-weight:850;letter-spacing:.6px;font-size:15px}
+.brand b{color:var(--cyan)}
+.status{font-size:12px;color:#a9f2cf;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;background:#35e69a;box-shadow:0 0 12px #35e69a}
+.hero{max-width:900px;margin:0 auto;text-align:center;padding:76px 18px 38px}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);
+ border-radius:99px;color:#a8dfff;background:rgba(24,119,201,.10);font-size:12px;font-weight:700;
+ letter-spacing:1.3px;text-transform:uppercase
+}
+h1{font-size:clamp(36px,8vw,68px);line-height:1.03;letter-spacing:-2px;margin:22px 0 14px}
+h1 span{background:linear-gradient(100deg,#fff 15%,#70dfff 55%,#3198ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:600px;margin:0 auto;color:var(--muted);line-height:1.9;font-size:15px}
+.actions{margin-top:25px}
+.primary{
+ display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:13px 19px;border-radius:12px;
+ color:#03101e;font-weight:800;background:linear-gradient(110deg,#71e3ff,#269cff);
+ box-shadow:0 8px 30px rgba(30,153,255,.22);transition:.2s
+}
+.primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(30,153,255,.34)}
+main{width:min(1000px,calc(100% - 36px));margin:0 auto 60px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:18px 2px 18px}
+.section-head h2{font-size:22px;margin:0 0 5px}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.badge{font-size:11px;color:#a8dfff;border:1px solid var(--line);padding:7px 10px;border-radius:99px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px}
+.card{
+ position:relative;overflow:hidden;padding:21px;border-radius:19px;
+ border:1px solid var(--line);background:linear-gradient(145deg,rgba(20,37,64,.92),rgba(10,18,34,.92));
+ box-shadow:0 12px 32px rgba(0,0,0,.18);transition:transform .22s,border-color .22s,box-shadow .22s
+}
+.card:before{content:"";position:absolute;width:170px;height:170px;right:-90px;top:-100px;border-radius:50%;background:rgba(28,159,255,.13);filter:blur(5px)}
+.card:hover{transform:translateY(-4px);border-color:rgba(70,186,255,.55);box-shadow:0 16px 40px rgba(0,90,180,.16)}
+.plan-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.data{font-size:30px;font-weight:850;letter-spacing:-1px}
+.data small{font-size:14px;color:var(--cyan);letter-spacing:0}
+.plan-tag{font-size:10px;font-weight:800;letter-spacing:.8px;color:#a8dfff;background:rgba(28,159,255,.12);border:1px solid rgba(28,159,255,.2);padding:6px 9px;border-radius:99px}
+.features{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 18px}
+.feature{font-size:12px;color:#c0cee0;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);padding:7px 9px;border-radius:8px}
+.buy-row{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding-top:15px}
+.price{font-size:20px;font-weight:850}
+.price small{display:block;font-size:10px;color:var(--muted);font-weight:500;margin-top:3px}
+.buy{
+ display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+ padding:11px 14px;border-radius:11px;background:linear-gradient(110deg,#1689ed,#24b9ff);
+ color:white;font-weight:800;font-size:13px;box-shadow:0 5px 18px rgba(25,147,255,.2);transition:.2s
+}
+.buy:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.buy svg{width:17px;height:17px}
+.info{
+ margin-top:20px;padding:17px 19px;border-radius:15px;border:1px solid var(--line);
+ background:rgba(11,23,42,.66);color:var(--muted);font-size:13px;line-height:1.9;text-align:center
+}
+footer{padding:28px 18px 35px;text-align:center;color:#71849e;font-size:12px}
+footer strong{color:#b7dfff}
+@media(max-width:520px){
+ .topbar{margin-top:12px}.hero{padding-top:58px}
+ .section-head{align-items:start;flex-direction:column}
+ .card{padding:18px}.data{font-size:27px}
+}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="brand">EH VPN <b>GLADIATOR</b></div>
+  <div class="status"><span class="dot"></span> Contact available · پشتیبانی</div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">⚡ Simple · Fast · Flexible</div>
+  <h1>Choose Your <span>Connection</span></h1>
+  <p>Premium VPN configuration plans<br>پلن موردنظرت رو انتخاب کن و برای تکمیل خرید با ما در تلگرام در ارتباط باش.</p>
+  <div class="actions"><a class="primary" href="#plans">Explore Plans <span aria-hidden="true">↓</span></a></div>
+</header>
+
+<main id="plans">
+  <div class="section-head">
+    <div><h2>Available Plans</h2><p>پلن‌های موجود · اعتبار تمام پلن‌ها ۳۰ روز</p></div>
+    <span class="badge">30 DAYS · SINGLE USER</span>
+  </div>
+
+  <section class="grid" aria-label="VPN plans">
+    <article class="card"><div class="plan-top"><div class="data">10 <small>GB</small></div><span class="plan-tag">STARTER</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">30,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 10 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+
+    <article class="card"><div class="plan-top"><div class="data">20 <small>GB</small></div><span class="plan-tag">BASIC</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">50,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 20 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+
+    <article class="card"><div class="plan-top"><div class="data">30 <small>GB</small></div><span class="plan-tag">STANDARD</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">80,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 30 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+
+    <article class="card"><div class="plan-top"><div class="data">40 <small>GB</small></div><span class="plan-tag">PLUS</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">110,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 40 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+
+    <article class="card"><div class="plan-top"><div class="data">50 <small>GB</small></div><span class="plan-tag">ADVANCED</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">140,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 50 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+
+    <article class="card"><div class="plan-top"><div class="data">100 <small>GB</small></div><span class="plan-tag">MAX</span></div><div class="features"><span class="feature">30 Days · ۳۰ روزه</span><span class="feature">Single User · تک‌کاربره</span></div><div class="buy-row"><div class="price">190,000 تومان<small>One-time price</small></div><a class="buy" href="https://t.me/Crazy860" aria-label="Buy 100 GB on Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg> Buy</a></div></article>
+  </section>
+
+  <div class="info">🛒 <strong>How to order / نحوه خرید:</strong> روی دکمه Buy بزن تا تلگرام باز بشه؛ ادامه خرید با پشتیبانی انجام می‌شه.<br>All plans are for one user and are valid for 30 days.</div>
+</main>
+<footer>© 2026 <strong>EH VPN Gladiator</strong> · Telegram: @Crazy860</footer>
+</body>
+</html>
